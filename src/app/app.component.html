@@ -1,0 +1,12 @@
+<hello name="{{ name }}"></hello>
+<img
+  src="https://assets.newatlas.com/dims4/default/038fb79/2147483647/strip/true/crop/1571x1047+215+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F37%2Fb6%2Ff16b25a14ce68e7a346934b6feff%2Fdepositphotos-11004890-l.jpg"
+  width="200"
+/>
+<!-- <pre> {{ beers$ | async | json }}</pre> -->
+<div *ngFor="let beer of beers$ | async">
+  <div *ngIf="beer.alcohol < 7; else strong">Nuno likes {{ beer.name }}</div>
+  <ng-template #strong>
+    Francisco is strong, so he likes {{ beer.name }}
+  </ng-template>
+</div>
